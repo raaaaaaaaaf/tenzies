@@ -7,6 +7,7 @@ import './style.css'
 export default function App() {
   const [dice, setDice] = useState(allNewDice())
   const [tenzies, setTenzies] = useState(false)
+  const [rollCount, setRollCount] = useState(0)
   
   useEffect(() => {
     const firstValue = dice[0].value
@@ -37,6 +38,7 @@ export default function App() {
 
   function rollDice() {
     if(!tenzies){
+      setRollCount(rollCount +1)
       setDice(oldDice => oldDice.map(die => {
           return die.isHeld ?
                 die : 
@@ -72,6 +74,8 @@ export default function App() {
       <button className="roll-dice" onClick={rollDice}>
       {tenzies ? "New Game" : "Roll"}
       </button>
+      <p>Rolls: {rollCount}</p>
+      
 
     </main>
   )

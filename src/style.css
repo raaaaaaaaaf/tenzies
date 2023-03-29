@@ -39,15 +39,16 @@ main {
 }
 
 .die-face {
-    height: 50px;
-    width: 50px;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
     border-radius: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+}
+.dice {
     cursor: pointer;
-
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 4px;
 }
 
 .die-num {
@@ -72,4 +73,57 @@ main {
 
 .roll-dice:active {
     box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
+}
+
+.dot {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #000;
+  }
+
+
+.first {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second {
+    display: flex;
+    justify-content: space-between;
+}
+
+.second .dot:nth-last-of-type(2) {
+    align-self: flex-end;
+}
+
+.third {
+    display: flex;
+    justify-content: space-between;
+}
+
+.third .dot:nth-last-of-type(1) {
+    align-self: flex-end;
+}
+
+.third .dot:nth-last-of-type(2) {
+    align-self: center;
+}
+
+.fourt, .fifth, .sixth {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fourt .column, .fifth .column, .sixth- .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.fifth .column:nth-last-of-type(2) {
+    justify-content: center;
 }
